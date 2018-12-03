@@ -1,10 +1,10 @@
 using System.Linq;
 using AutoMapper;
-using datingapp.api.Dtos;
+using DatingApp.API.Dtos;
 using DatingApp.API.Helpers;
 using DatingApp.API.Models;
 
-namespace datingapp.api.Helpers
+namespace DatingApp.API.Helpers
 {
     public class AutoMapperProfiles : Profile
     {
@@ -27,6 +27,7 @@ namespace datingapp.api.Helpers
             });
             ;
             CreateMap<Photo, PhotosForDetailedDto>();
+            CreateMap<UserForUpdateDto, User>();
         }
     }
 }
