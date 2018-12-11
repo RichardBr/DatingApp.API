@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Data
 {
-    public class DatingRepository : IDatingRepository
+    public partial class DatingRepository : IDatingRepository
     {
         private readonly DataContext _context;
         public DatingRepository(DataContext context)
@@ -26,6 +26,9 @@ namespace DatingApp.API.Data
             var noOfChangesSaved = await _context.SaveChangesAsync();
             return noOfChangesSaved > 0;
         }
+    }
+    public partial class DatingRepository : IDatingRepository
+    {
         public async Task<IEnumerable<User>> GetUsers()
         {
             var users = await _context.Users.Include(p=>p.Photos).ToListAsync();
