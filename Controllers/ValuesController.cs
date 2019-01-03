@@ -10,7 +10,7 @@ using DatingApp.API.Data;
 
 namespace DatingApp.API.Controllers
 {
-    [Authorize]
+    // [Authorize] - not required anymore due to startup.cs containing "options.Filters.Add(new AuthorizeFilter(policy));"
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase

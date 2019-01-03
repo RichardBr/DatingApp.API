@@ -16,7 +16,7 @@ using DatingApp.API.Models;
 namespace DatingApp.API.Controllers
 {
     [ServiceFilter(typeof(LogUserActivity))]
-    [Authorize]
+    // [Authorize] - not required anymore due to startup.cs containing "options.Filters.Add(new AuthorizeFilter(policy));"
     [Route("api/users/{userId}/[controller]")]
     [ApiController]
     public class MessagesController : ControllerBase

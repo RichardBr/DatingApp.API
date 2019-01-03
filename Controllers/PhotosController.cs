@@ -18,8 +18,7 @@ using DatingApp.API.Models;
 
 namespace DatingApp.API.Controllers
 {
-    [Authorize]
-    //[Route("api/[controller]")]
+    // [Authorize] - not required anymore due to startup.cs containing "options.Filters.Add(new AuthorizeFilter(policy));"
     [Route("api/users/{userId}/photos")]
     [ApiController]
     public class PhotosController : ControllerBase
